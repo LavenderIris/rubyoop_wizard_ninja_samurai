@@ -8,8 +8,9 @@ class Ninja < Human
         @stealth = 150
     end 
 
-    def steal
-        @heal += 10
+    def steal(victim)
+        attack(victim)
+        @health += 10
         self
     end
 

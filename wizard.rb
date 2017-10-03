@@ -10,13 +10,17 @@ class Wizard < Human
     end 
 
     def heal
-        @heal += 10
+        @health += 10
         self
     end
 
     def fireball(obj)
-        obj.health -= 20
-        self
+        if obj.class.ancestors.include?(Human)
+            obj.health -= 20
+            true
+        else
+            false
+        end
     end
 end
   
